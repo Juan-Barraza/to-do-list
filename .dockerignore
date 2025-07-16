@@ -1,0 +1,39 @@
+# Directorios de build y dependencias
+.gradle/
+build/
+bin/
+out/
+
+# Archivos de IDE y editor
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de versionado (Git)
+.git/
+.gitignore
+
+# Archivos de configuración local
+*.properties
+*.yml
+!application.yml  # Excepción: permite el archivo de configuración principal
+
+# Logs y temporales
+*.log
+tmp/
+
+# Archivos de Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Otros
+**/target/
+**/*.jar
+!build/libs/*.jar  # Excepción: permite el JAR construido
