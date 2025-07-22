@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.java.todolist.dto.user.UserDto;
 import com.java.todolist.models.User;
 import com.java.todolist.repositories.IUserRepository;
-import com.java.todolist.utils.MapeoUser;
+import com.java.todolist.utils.Mapeo;
 import com.java.todolist.utils.exeptions.BusinessException;
 import com.java.todolist.utils.exeptions.ResourceNotFoundException;
 import com.java.todolist.utils.reponse.ApiResponse;
@@ -22,11 +22,11 @@ import com.java.todolist.utils.validators.user.ValidatorUser;
 public class UserService implements IUserService {
 
     private final IUserRepository userRepository;
-    private final MapeoUser mapper;
+    private final Mapeo mapper;
     private final PasswordEncoder passwordEncoder;
     private final ValidatorUser validatorUser;
 
-    public UserService(IUserRepository userRepository, MapeoUser mapper, PasswordEncoder passwordEncoder, ValidatorUser validatorUser) {
+    public UserService(IUserRepository userRepository, Mapeo mapper, PasswordEncoder passwordEncoder, ValidatorUser validatorUser) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.passwordEncoder = passwordEncoder;

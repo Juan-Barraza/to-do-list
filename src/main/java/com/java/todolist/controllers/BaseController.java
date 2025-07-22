@@ -6,9 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Controlador base que contiene:
- * - Ruta base común (/api/v1)
  * - Métodos utilitarios para respuestas
- * - Manejo centralizado de errores
  */
 @RestController
 public class BaseController {
