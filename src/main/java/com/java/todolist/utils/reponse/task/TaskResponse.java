@@ -1,12 +1,13 @@
 package com.java.todolist.utils.reponse.task;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
 public class TaskResponse {
     private Long idTask;
     private String title;
-    private LocalDateTime deuDate;
+    private LocalDate deuDate;
     private boolean isCompleted;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -15,7 +16,7 @@ public class TaskResponse {
     public TaskResponse() {
     }
 
-    public TaskResponse(Long idTask, String title, LocalDateTime deuDate, boolean isCompleted, LocalDateTime createdAt,
+    public TaskResponse(Long idTask, String title, LocalDate deuDate, boolean isCompleted, LocalDateTime createdAt,
             LocalDateTime updatedAt, Long Iduser) {
         this.idTask = idTask;
         this.title = title;
@@ -42,11 +43,11 @@ public class TaskResponse {
         this.title = title;
     }
 
-    public LocalDateTime getDeuDate() {
+    public LocalDate getDeuDate() {
         return deuDate;
     }
 
-    public void setDeuDate(LocalDateTime deuDate) {
+    public void setDeuDate(LocalDate deuDate) {
         this.deuDate = deuDate;
     }
 

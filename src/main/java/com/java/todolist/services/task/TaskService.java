@@ -16,6 +16,7 @@ import com.java.todolist.utils.exeptions.ResourceNotFoundException;
 import com.java.todolist.utils.reponse.ApiResponse;
 import com.java.todolist.utils.reponse.task.TaskListResponse;
 import com.java.todolist.utils.reponse.task.TaskResponse;
+import com.java.todolist.utils.validators.task.ValidatorTask;
 
 @Service
 public class TaskService implements ITaskService {
@@ -23,17 +24,21 @@ public class TaskService implements ITaskService {
     private final ITaskRepository taskRepository;
     private final IUserRepository userRepo;
     private final Mapeo mapperTs;
+    private final ValidatorTask validatorTask;
 
-    public TaskService(ITaskRepository taskRepository, IUserRepository userRepo, Mapeo mapperTs) {
+    public TaskService(ITaskRepository taskRepository, IUserRepository userRepo, Mapeo mapperTs, ValidatorTask validatorTask) {
         this.taskRepository = taskRepository;
         this.userRepo = userRepo;
         this.mapperTs = mapperTs;
+        this.validatorTask = validatorTask;
     }
 
     @Override
     @Transactional
     public ApiResponse<TaskResponse> createTask(TaskCreateDto taskCreateDto) {
-
+    
+        validatorTask.validate(taskCreateDto);
+        
         if (taskRepository.existsByTitle(taskCreateDto.getTitle())) {
             throw new BusinessException("Task already exist with this title");
         }

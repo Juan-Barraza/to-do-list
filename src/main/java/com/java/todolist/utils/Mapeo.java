@@ -63,6 +63,7 @@ public class Mapeo {
         TypeMap<Task, TaskResponse> taskResponseMap = modelMapper.createTypeMap(Task.class, TaskResponse.class);
         taskResponseMap.addMappings(mapper -> {
             mapper.map(Task::getId, TaskResponse::setIdTask);
+            mapper.map(Task::getDueDate, TaskResponse::setDeuDate);
             mapper.map(src -> src.getUser().getId(), TaskResponse::setUserId);
         });
     }

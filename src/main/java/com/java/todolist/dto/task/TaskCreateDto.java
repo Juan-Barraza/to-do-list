@@ -1,17 +1,17 @@
 package com.java.todolist.dto.task;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class TaskCreateDto {
     private String title;
     private String description;
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
     private Long userId;
 
     public TaskCreateDto() {
     }
 
-    public TaskCreateDto(String title, String description, LocalDateTime dueDate, Long userId) {
+    public TaskCreateDto(String title, String description, LocalDate dueDate, Long userId) {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -34,11 +34,11 @@ public class TaskCreateDto {
         this.description = description;
     }
 
-    public LocalDateTime getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 

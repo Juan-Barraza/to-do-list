@@ -2,10 +2,11 @@ package com.java.todolist.models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "task")
+@Table(name = "tasks")
 public class Task {
 
     @Id
@@ -18,7 +19,7 @@ public class Task {
     private String description;
 
     @Column(name = "due_date")
-    private LocalDateTime dueDate;
+    private LocalDate dueDate;
 
     @Column(name = "is_completed", nullable = false)
     private boolean isCompleted = false;
@@ -68,11 +69,11 @@ public class Task {
         this.description = description;
     }
 
-    public LocalDateTime getDueDate() {
+    public LocalDate getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
     }
 
